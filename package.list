@@ -31,3 +31,5 @@ tmux
 ftp
 jq
 keepassxc
+virtualbox-guest-utils
+virtualbox-guest-x11
