@@ -1,0 +1,7 @@
+# Used by download_repositories.sh
+# Syntax: latest|master owner/repo [list,of,assets] > /target_directory
+# The list of assets is optional, if not provided all assets will be downloaded
+# The target directory is optional, if not provided the assets will be downloaded to ~/tools
+latest carlospolop/PEASS-ng > ~/ressources/PrivEsc/PEASS-ng
+master rebootuser/LinEnum [LinEnum.sh]> ~/ressources/PrivEsc/LinEnum
+master kon-foo/bash > ~/.bash_custom

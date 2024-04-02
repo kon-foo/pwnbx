@@ -1,0 +1,7 @@
+.php
+.html
+.js
+.css
+.txt
+.json
+.xml
