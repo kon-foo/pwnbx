@@ -4,7 +4,19 @@
 sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
 
 ## Install packages
-sudo apt install $(cat package.list | tr "\n" " ") -y
+echo "" > failed_packages.log
+while read package; do
+  echo "Attempting to install $package..."
+  if ! sudo apt install "$package" -y; then
+    echo "$package" >> failed_packages.log
+  fi
+done < test.list
+
+if [ -s failed_packages.log ]; then
+  echo "Some packages failed to install. Check failed_packages.log for details."
+else
+  echo "All packages installed successfully."
+fi
 
 ## Decrypt secrets
 ./decrypt.sh
