@@ -1,8 +1,5 @@
 #!/bin/bash
 
-## Add repositories
-sudo add-apt-repository ppa:phoerious/keepassxc
-
 ## Update and install packages
 sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
 
