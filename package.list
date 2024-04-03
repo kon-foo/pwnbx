@@ -1,4 +1,4 @@
-netcat
+netcat-openbsd
 ncat
 nmap
 wireshark
@@ -15,7 +15,6 @@ radare2
 metasploit-framework
 python2.7
 python3
-spiderfoot
 theharvester
 remmina
 xfreerdp
