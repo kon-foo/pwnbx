@@ -10,7 +10,10 @@ sudo apt install $(cat package.list | tr "\n" " ") -y
 ./decrypt.sh
 
 ## Copy directories to home
-cp -r ./ressources/* ~/
+mkdir -p ~/ressources
+mkdir -p ~/scripts
+mkdir -p ~/secrets
+cp -r ./ressources/* ~/ressources/
 cp -r ./scripts/* ~/scripts/
 cp -r ./secrets/* ~/secrets/
 
