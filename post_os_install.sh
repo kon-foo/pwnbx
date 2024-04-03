@@ -10,7 +10,7 @@ while read package; do
   if ! sudo apt install "$package" -y; then
     echo "$package" >> failed_packages.log
   fi
-done < test.list
+done < package.list
 
 if [ -s failed_packages.log ]; then
   echo "Some packages failed to install. Check failed_packages.log for details."
