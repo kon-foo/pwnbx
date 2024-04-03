@@ -62,7 +62,7 @@ download_master_branch() {
         done
     else
         # No specific assets, copy all files from the cloned repo to the target directory
-        cp -r "$tmp_dir/." "$target_dir/"
+        sudo cp -r "$tmp_dir/." "$target_dir/"
     fi
 
     # Clean up the temporary directory
@@ -126,6 +126,7 @@ parse_and_process() {
         # Extract target directory if specified
         if [[ "$line" == *">"* ]]; then
             target_dir=$(echo "$line" | grep -oP '>.*' | cut -c2- | xargs)
+            target_dir="${target_dir/#\~/$HOME}"
         fi
         mkdir -p "$target_dir"
 
