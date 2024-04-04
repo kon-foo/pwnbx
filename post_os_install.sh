@@ -32,8 +32,29 @@ cp -r ./secrets/* ~/secrets/
 ## Download Github Repositories
 ./download_repositories.sh
 
-## Add custom Bash (Downloaded Repository)
+## Add custom .basrc (Downloaded Repository)
 ~/.bash_custom/append_to_bashrc.sh
 
+## Add HTB specific bash aliases
+
+touch ~/.bash_aliases
+if ! grep -q "alias htbvpn='~/scripts/htb_vpn.sh'" ~/.bash_aliases; then
+  echo "alias htbvpn='~/scripts/htb_vpn.sh'" >> ~/.bash_aliases
+fi
+if ! grep -q "alias htbssh='~/scripts/htb_academy_ssh.sh'" ~/.bash_aliases; then
+  echo "alias htbssh='~/scripts/htb_academy_ssh.sh'" >> ~/.bash_aliases
+fi
+if ! grep -q "alias tunip='~/scripts/tunnel_ip.sh'" ~/.bash_aliases; then
+  echo "alias tunip='~/scripts/tunnel_ip.sh'" >> ~/.bash_aliases
+fi
+
+source ~/.bashrc
 
 
+## Apply MATE Terminal config
+dconf load /org/mate/terminal/ < mate-terminal-settings.dconf
+echo "MATE Terminal configuration applied successfully."
+
+
+## Add KeepassXC to the MATE Autostart
+cp /usr/share/applications/parrot-keepassxc.desktop ~/.config/autostart/
