@@ -48,7 +48,8 @@ if ! grep -q "alias tunip='~/scripts/tunnel_ip.sh'" ~/.bash_aliases; then
   echo "alias tunip='~/scripts/tunnel_ip.sh'" >> ~/.bash_aliases
 fi
 
-source ~/.bashrc
+source ~/.bash_aliases
+
 
 
 ## Apply MATE Terminal config
